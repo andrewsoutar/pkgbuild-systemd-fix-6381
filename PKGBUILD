@@ -5,7 +5,7 @@ pkgbase=systemd-fix-6381
 pkgname=('systemd-fix-6381' 'libsystemd-fix-6381' 'systemd-sysvcompat-fix-6381')
 # Bump this to latest major release for signed tag verification,
 # the commit count is handled by pkgver() function.
-pkgver=234.12
+pkgver=234.13
 pkgrel=1
 arch=('i686' 'x86_64')
 url="https://www.github.com/andrewsoutar/systemd"
@@ -15,7 +15,7 @@ makedepends=('acl' 'cryptsetup' 'docbook-xsl' 'gperf' 'lz4' 'xz' 'pam' 'libelf'
              'python-lxml' 'quota-tools' 'shadow' 'gnu-efi-libs' 'git'
              'meson')
 options=('strip')
-source=("git://github.com/andrewsoutar/systemd-stable.git"
+source=("git://github.com/andrewsoutar/systemd-stable.git#branch=v${pkgver%.*}-stable"
         'git://github.com/systemd/systemd.git' # pull in for tags
         'initcpio-hook-udev'
         'initcpio-install-systemd'
@@ -142,7 +142,7 @@ package_systemd-fix-6381() {
   pkgdesc="system and service manager"
   license=('GPL2' 'LGPL2.1')
   depends=('acl' 'bash' 'cryptsetup' 'dbus' 'iptables' 'kbd' 'kmod' 'hwids' 'libcap'
-           'libgcrypt' 'libsystemd' 'libidn' 'lz4' 'pam' 'libelf' 'libseccomp'
+           'libgcrypt' 'libsystemd-fix-6381' 'libidn' 'lz4' 'pam' 'libelf' 'libseccomp'
            'util-linux' 'xz')
   provides=('systemd' 'nss-myhostname' "systemd-tools=$pkgver" "udev=$pkgver")
   replaces=('systemd' 'nss-myhostname' 'systemd-tools' 'udev')
