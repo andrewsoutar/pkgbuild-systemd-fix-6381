@@ -1,0 +1,23 @@
+This repository hosts the PKGBUILD for a patched copy of systemd - specifically,
+the one found at https://github.com/andrewsoutar/systemd-stable. It contains a
+patched which (hopefully) fixes systemd bug#6381, which breaks
+systemd-cryptsetup under certain conditions. Unless you're testing or using this
+patch, you do not need my package.
+
+Building and installing the package is relatively straightforward. First, you'll
+need the systemd tag-signing key:
+
+$ gpg --recv-key 63CDA1E5D3FC22B998D20DD6327F26951A015CC4
+
+Then, build and install the package:
+
+$ makepkg -Csi
+
+Don't forget to rebuild your initramfs if pacman didn't do it for you.
+
+NOTE: If you try to build multiple times on the same source tree without
+cleaning (the `-C` flag to makepkg), you WILL get errors.
+
+This package is derived directly from the ABS systemd package
+(https://git.archlinux.org/svntogit/packages.git, branch packages/systemd). I
+have made only minor changes to the build scripts.

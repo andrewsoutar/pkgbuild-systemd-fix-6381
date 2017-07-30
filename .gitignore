@@ -1,0 +1,7 @@
+/pkg/
+/src/
+/systemd-stable/
+/systemd/
+/libsystemd-fix-6381-*.pkg.tar.xz
+/systemd-fix-6381-*.pkg.tar.xz
+/systemd-sysvcompat-fix-6381-*.pkg.tar.xz
