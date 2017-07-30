@@ -3,8 +3,6 @@
 
 pkgbase=systemd-fix-6381
 pkgname=('systemd-fix-6381' 'libsystemd-fix-6381' 'systemd-sysvcompat-fix-6381')
-# latest commit on stable branch
-_commit='5069adf0b76de93b14cfa8e329812f33da9690ed'
 # Bump this to latest major release for signed tag verification,
 # the commit count is handled by pkgver() function.
 pkgver=234.12
@@ -17,7 +15,7 @@ makedepends=('acl' 'cryptsetup' 'docbook-xsl' 'gperf' 'lz4' 'xz' 'pam' 'libelf'
              'python-lxml' 'quota-tools' 'shadow' 'gnu-efi-libs' 'git'
              'meson')
 options=('strip')
-source=("git://github.com/andrewsoutar/systemd-stable.git#commit=${_commit}"
+source=("git://github.com/andrewsoutar/systemd-stable.git"
         'git://github.com/systemd/systemd.git' # pull in for tags
         'initcpio-hook-udev'
         'initcpio-install-systemd'
