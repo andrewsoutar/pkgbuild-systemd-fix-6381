@@ -6,7 +6,7 @@ pkgname=('systemd-fix-6381' 'libsystemd-fix-6381' 'systemd-sysvcompat-fix-6381')
 # Bump this to latest major release for signed tag verification,
 # the commit count is handled by pkgver() function.
 pkgver=234.13
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 url="https://www.github.com/andrewsoutar/systemd"
 makedepends=('acl' 'cryptsetup' 'docbook-xsl' 'gperf' 'lz4' 'xz' 'pam' 'libelf'
@@ -227,12 +227,11 @@ package_systemd-fix-6381() {
 
 package_libsystemd-fix-6381() {
   pkgdesc="systemd client libraries"
-  provides=('libsystemd')
   replaces=('libsystemd')
   conflicts=('libsystemd')
   depends=('glibc' 'libcap' 'libgcrypt' 'lz4' 'xz')
   license=('GPL2')
-  provides=('libsystemd.so' 'libudev.so')
+  provides=('libsystemd' 'libsystemd.so' 'libudev.so')
 
   # meson does not support installing subsets of files, no?
   # So do a full install to temporary directory, then install what we need.
