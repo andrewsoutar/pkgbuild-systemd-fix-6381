@@ -1,3 +1,6 @@
+UPDATE: This bug has been fixed in systemd-234.11-3 [testing]. Please use that
+package instead.
+
 This repository hosts the PKGBUILD for a patched copy of systemd - specifically,
 the one found at https://github.com/andrewsoutar/systemd-stable. It contains a
 patched which (hopefully) fixes systemd bug#6381, which breaks
